@@ -1,5 +1,5 @@
-{{ object.title }} <br/>
-{{ object.description }} <br/>
-{% if object.image %}
-    <img src='{{ object.image.url }}' class='img-fluid' />
-{% endif %}
+{% for obj in object_list %}
+
+<a href='{{ obj.get_absolute_url }}'>{{ obj.title }}</a><br/>
+
+{% endfor %}
