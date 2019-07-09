@@ -10,7 +10,8 @@ def home_page(request):
         "content":" Welcome to the homepage.",
 
     }
-    
+    # if request.user.is_authenticated():
+    #     context["premium_content"] = "YEAHHHHHH"
     return render(request, "home_page.html", context)
 
 def about_page(request):
@@ -25,7 +26,7 @@ def contact_page(request):
     context = {
         "title":"Contact",
         "content":" Welcome to the contact page.",
-        "form": contact_form
+        "form": contact_form,
     }
     if contact_form.is_valid():
         print(contact_form.cleaned_data)
@@ -91,6 +92,7 @@ def home_page_old(request):
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
       </head>
@@ -107,3 +109,5 @@ def home_page_old(request):
     </html>
     """
     return HttpResponse(html_)
+
+
