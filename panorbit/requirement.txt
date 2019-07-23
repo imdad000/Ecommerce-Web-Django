@@ -1,0 +1,2 @@
+pip install django-otp
+pip install django-phonenumber-field

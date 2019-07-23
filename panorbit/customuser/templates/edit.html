@@ -1,0 +1,30 @@
+<!doctype html>
+{% load staticfiles %}
+<html>
+     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <form id="loginForm" action="{% url 'imdad:login_and_signup' %}" method="post">
+                {% csrf_token %}
+                <input type="text" id="inputFirstName" class="form-control" placeholder="First Name" required autofocus name="first_name">
+                <input type="text" id="inputLastName" class="form-control" placeholder="Last Name" required autofocus name="last_name">
+                <input type="text" id="inputFathersName" class="form-control" placeholder="Father's Name" required autofocus name="fathers_name">
+                <select name="gender" class="form-control" name="gender">
+                    <option value="" disabled selected>Gender</option> 
+                    <option value="Male">Male</option> 
+                    <option value="Female">Female</option> 
+                    <option value="Others">Others</option> 
+                </select> 
+                <input type="text" id="inputEmailId" class="form-control" placeholder="Email Id" required autofocus name="email">
+                <input type="text" id="inputPhn" class="form-control" placeholder="Phone No" required autofocus name="phone_number">
+                <input type="text" id="inputSpouse" class="form-control" placeholder="Spouse Name" required autofocus name="spouse_name">
+                <button type="submit" value="Save" id="save">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
